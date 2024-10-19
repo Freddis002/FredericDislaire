@@ -1,0 +1,357 @@
+/* Styles pour le conteneur global du menu et du header */
+.menu-header-container {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* Conteneur global du menu */
+.menu-container {
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(12, 12, 12, 0.9);  /* Fond semi-transparent */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Menu devient plus compact au scroll */
+.menu-container.scrolled {
+    background-color: #0C0C0C;  /* Fond noir complet après le scroll */
+    padding: 10px 0;
+}
+
+/* Conteneur du logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+/* Style du logo */
+.logo {
+    height: 100px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, height 0.3s ease;
+}
+
+/* Réduction de la taille du logo lors du scroll */
+.menu-container.scrolled .logo {
+    height: 60px;
+}
+
+/* Menu Burger */
+.menu-burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #EDF5E1;
+    margin: 4px 0;
+    transition: background-color 0.3s ease;
+}
+
+.menu-burger.open .burger-line {
+    background-color: #F2613F;
+}
+
+/* Liste des items du menu */
+.menu-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    margin: 0 20px;
+    position: relative;
+}
+
+.menu-item a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s ease;
+    color: #EDF5E1;
+}
+
+.menu-item a:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #F2613F;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.menu-item a:hover {
+    color: #F2613F;
+}
+
+/* Icônes de réseaux sociaux */
+.social-icon {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    color: #EDF5E1;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #F2613F;
+}
+
+/* Menu Burger responsive */
+@media (max-width: 768px) {
+    .menu-burger {
+        display: flex;
+    }
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #0C0C0C;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .menu-list-open {
+        display: flex;
+    }
+
+    .menu-item {
+        margin: 10px 0;
+    }
+}
+
+/* Styles pour l'en-tête */
+.header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Fond noir */
+    position: relative;
+}
+
+/* Conteneur pour les images superposées */
+.avatar-container {
+    position: relative;
+    width: 600px; /* Ajuste la taille selon tes images */
+    height: 930px; /* Ajuste la hauteur selon les photos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;  /* Centrer le conteneur horizontalement */
+  }
+  
+  /* Styles pour les images (photo1 et photo2) */
+  .avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease; /* Transition douce pour l'opacité */
+    z-index: 2; /* Les photos restent superposées correctement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Masquer la première image au survol */
+  .hidden {
+    opacity: 0;
+  }
+  
+  /* Afficher la deuxième image au survol */
+  .visible {
+    opacity: 1;
+  }
+  
+  /* Empêcher la deuxième image d'être visible par défaut */
+  .avatar + .avatar {
+    opacity: 0;
+  }
+  
+
+/* Styles pour le nom Frédéric et Dislaire */
+.name {
+    font-size: 140px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+}
+
+.name-top {
+    top: 50px;
+    left: 50px;
+}
+
+.name-bottom {
+    bottom: 20px;
+    right: 50px;
+}
+
+/* Styles pour les mots-clés */
+.keyword {
+    font-size: 60px;
+    color: #fff;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Effet hover léger sur les mots-clés */
+.keyword:hover {
+    color: #F2613F;
+}
+
+
+
+/* Responsive pour petits écrans (smartphones) */
+@media (max-width: 480px) {
+    .avatar-container {
+        width: 90vw;
+        max-height: 70vh; /* Limite encore plus la hauteur sur mobile */
+        margin: 0 auto;
+    }
+
+    .logo {
+        width: 80px; /* Réduction de la taille du logo */
+        height: auto;
+    }
+
+    .name {
+        display: none; /* Masque complètement les noms si nécessaire */
+    }
+
+    .keyword {
+        display: none; /* Cache les mots-clés sur mobile */
+    }
+    /* Affiche le menu burger pour les petits écrans */
+    .menu-burger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .burger-line {
+        width: 25px;
+        height: 3px;
+        background-color: #EDF5E1;
+        margin: 4px 0;
+    }
+
+    .menu-list {
+        display: none; /* Cache la liste du menu classique */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #0C0C0C;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .menu-list-open {
+        display: flex; /* Affiche la liste du menu burger une fois ouvert */
+    }
+
+    .menu-item {
+        margin: 10px 0;
+        font-size: 1.1rem;
+    }
+
+    .social-icon {
+        font-size: 1.8rem;
+        margin: 10px;
+        color: #5CDB95;
+    }
+}
+@media (max-width: 1180px) {
+    .avatar-container {
+        width: 90vw;
+        max-height: 70vh; /* Limite encore plus la hauteur sur mobile */
+        margin: 0 auto;
+    }
+
+    .logo {
+        width: 80px; /* Réduction de la taille du logo */
+        height: auto;
+    }
+
+    .name {
+        display: none; /* Masque complètement les noms si nécessaire */
+    }
+
+    .keyword {
+        display: none; /* Cache les mots-clés sur tablette */
+    }
+    /* Affiche le menu burger pour les petits écrans */
+    .menu-burger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .burger-line {
+        width: 25px;
+        height: 3px;
+        background-color: #EDF5E1;
+        margin: 4px 0;
+    }
+
+    .menu-list {
+        display: none; /* Cache la liste du menu classique */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #0C0C0C;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .menu-list-open {
+        display: flex; /* Affiche la liste du menu burger une fois ouvert */
+    }
+
+    .menu-item {
+        margin: 10px 0;
+        font-size: 1.1rem;
+    }
+
+    .social-icon {
+        font-size: 1.8rem;
+        margin: 10px;
+        color: #5CDB95;
+    }
+}
+

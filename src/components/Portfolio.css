@@ -1,0 +1,353 @@
+/* Conteneur principal du portfolio */
+.portfolio-container {
+  padding: 50px;
+  background-color: #f5f5f5;
+}
+
+/* Titre principal */
+.portfolio-title {
+  text-align: center;
+  font-size: 45px;
+  color: #379683; /* Vert de la charte graphique */
+  margin-bottom: 40px;
+}
+
+/* Conteneur des catégories */
+.portfolio-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* Boutons des catégories */
+.portfolio-category-button {
+  background-color: #41B3A3; /* Vert de la charte graphique */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 10px;
+}
+
+.portfolio-category-button:hover {
+  background-color: #379683; /* Teinte plus foncée au survol */
+  transform: scale(1.05);
+}
+
+.portfolio-category-button.active {
+  background-color: #85dcb0; /* Couleur plus claire pour la catégorie active */
+}
+
+/* Grille pour afficher les cartes des projets */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Carte des projets */
+.portfolio-card {
+  width: 100%;
+  max-width: 400px; /* Largeur maximale des cartes */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Conteneur de l'image des projets */
+.portfolio-image-container {
+  width: 100%;
+  height: auto; /* Hauteur automatique pour respecter le ratio de l'image */
+}
+
+.portfolio-image {
+  width: 100%;
+  object-fit: contain; /* S'assure que l'image reste dans la carte sans déborder */
+  cursor: pointer;
+}
+
+/* Informations sur le projet */
+.portfolio-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.portfolio-info h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.portfolio-info p {
+  font-size: 1rem;
+  color: #555;
+  text-align: justify;
+}
+
+/* Icônes pour développement web */
+.portfolio-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.portfolio-icons .icon {
+  font-size: 1.5rem;
+  margin: 0 10px;
+  cursor: pointer;
+  color: #41B3A3;
+}
+
+.portfolio-icons .icon:hover {
+  color: #379683;
+}
+
+/* Style de la grille des images */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptatif pour le nombre d'images */
+  gap: 10px;
+  padding: 20px;
+}
+
+/* Style des images dans la grille */
+.grid-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover; /* Assure que l'image reste bien proportionnée */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.grid-image:hover {
+  transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+/* Modal pour afficher les images agrandies */
+.portfolio-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  flex-direction: column; /* Aligner le bouton sous l'image */
+}
+
+
+/* Contenu du modal */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Style des images dans le modal - agrandissement à 80% */
+.modal-image {
+  max-width: 80%; /* Taille plus grande pour les photos */
+  max-height: 80%; /* Limiter la hauteur à 80% de l'écran */
+  border-radius: 10px;
+  object-fit: contain; /* Assure que l'image reste bien proportionnée */
+  margin-bottom: 20px;
+}
+/* Modal pour l'agrandissement de l'image */
+.portfolio-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  flex-direction: column; /* Permet d'afficher le bouton sous l'image */
+}
+
+/* Images dans le modal - taille réduite pour une meilleure vue */
+.modal-image {
+  max-width: 60%; /* Taille réduite à 60% pour mieux s'adapter aux écrans */
+  max-height: 60%; /* Limite pour garder l'image dans l'écran */
+  border-radius: 10px;
+  object-fit: contain; /* Pour que l'image conserve ses proportions */
+}
+
+/* Bouton de fermeture sous l'image */
+.modal-close-button {
+  background-color: #41B3A3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-close-button:hover {
+  background-color: #379683;
+}
+
+/* Responsive Design */
+
+/* Pour les tablettes et les téléphones */
+@media (max-width: 1024px) {
+  .modal-image {
+    max-width: 50%; /* Taille encore plus réduite pour tablette */
+    max-height: 50%;
+  }
+
+  .modal-close-button {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-image {
+    max-width: 40%; /* Taille plus petite pour mobile */
+    max-height: 40%;
+  }
+
+  .modal-close-button {
+    margin-top: 10px; /* Espacement réduit pour mobile */
+  }
+}
+
+/* Grille des images dans la section "Autres compétences" */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* S'adapte automatiquement selon le nombre d'images */
+  gap: 10px;
+  padding: 20px;
+}
+
+.grid-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover; /* Assure que les images restent bien proportionnées */
+  cursor: pointer;
+}
+
+/* Ajuster la taille des images dans les modals */
+.modal-image {
+  max-width: 70%; /* Réduire la taille pour voir le bouton fermer */
+  max-height: 70%; /* Ajustement pour mobiles et tablettes */
+  object-fit: contain; /* Ajuster l'image pour qu'elle reste entière */
+  margin-bottom: 20px; /* Ajouter un espace pour le bouton "Fermer" */
+}
+
+/* Toujours afficher le bouton fermer sous l'image */
+.modal-close-button {
+  position: relative;
+  display: block;
+  margin: 10px auto; /* Centrer le bouton */
+  background-color: #41B3A3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-close-button:hover {
+  background-color: #379683;
+}
+
+/* S'assurer que l'image s'affiche à la bonne taille dès le premier clic */
+.portfolio-modal img {
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 80vh; /* Ajuster la hauteur maximum pour mobile et tablette */
+}
+
+/* Pour les petites résolutions */
+@media (max-width: 768px) {
+  .modal-image {
+    max-width: 90%;
+    max-height: 60vh;
+  }
+
+  .modal-close-button {
+    padding: 8px 16px;
+  }
+}
+
+/* Responsive Design */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  }
+
+  .portfolio-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .portfolio-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .modal-image {
+    max-width: 60%; /* Réduction pour tablette */
+    max-height: 60%;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* 1 colonne */
+  }
+
+  .portfolio-card {
+    width: 100%;
+  }
+
+  .portfolio-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .portfolio-info p {
+    font-size: 0.9rem;
+  }
+
+  /* Modal image adaptation for smaller screens */
+  .modal-image {
+    max-width: 80%; /* Taille plus petite pour les mobiles */
+    max-height: 80%;
+  }
+  
+  /* Bouton de fermeture sous l'image */
+  .modal-close-button {
+    margin-top: 10px;
+  }
+}

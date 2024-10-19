@@ -1,0 +1,100 @@
+/* Section Expériences */
+.experiences-section {
+  padding: 50px;
+  background-color: #f5f5f5;  /* Rose très clair */
+  text-align: center;
+}
+
+.experiences-title {
+  font-size: 45px;
+  color: #379683;  /* Vert doux pour le titre */
+  margin-bottom: 40px;
+}
+
+/* Grille des cartes */
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;  /* Espace entre les cartes */
+}
+
+/* Style des cartes */
+.experience-card {
+  width: 300px;
+  background: linear-gradient(135deg, #8EE4AF, #379683);  /* Dégradé entre Rose pâle et Vert foncé */
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, height 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  height: 150px; /* Hauteur initiale pour montrer seulement le titre et la date */
+}
+
+/* Titre et date des cartes */
+.experience-card h3, .experience-card p {
+  transition: color 0.3s ease, opacity 0.3s ease;
+  color: #ffffff;  /* Par défaut, texte blanc */
+  margin: 0;
+}
+
+/* Détails des missions cachés par défaut */
+.missions {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ffffff;  /* Missions en blanc */
+  opacity: 0;  /* Masqué au départ */
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;  /* Animation douce */
+  text-align: justify;
+}
+
+.missions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.missions li {
+  margin-bottom: 10px;
+  color: #ffffff;  /* Les missions restent en blanc */
+  display: flex;
+  align-items: center;
+}
+
+.missions li::before {
+  content: '✔';  /* Icône en début de puce */
+  margin-right: 8px;  /* Espace entre l'icône et le texte */
+  color: #5CDB95;  /* Vert doux pour l'icône */
+}
+
+/* Effet sur la carte survolée */
+.experience-card:hover {
+  transform: scale(1.1);  /* Agrandissement de la carte survolée */
+  background: linear-gradient(135deg, #907163, #5CDB95);  /* Changement de fond au survol */
+  height: auto;  /* La carte s'adapte à son contenu */
+}
+
+.experience-card:hover .missions {
+  opacity: 1;  /* Affichage des missions */
+  max-height: 590px;  /* Extension pour montrer toutes les missions */
+}
+
+/* Effet sur les autres cartes non survolées */
+.experience-card:not(:hover) {
+  height: 110px;  /* Réduit la hauteur pour ne montrer que le titre et la date */
+  opacity: 0.7;  /* Légère réduction d'opacité pour les cartes non survolées */
+}
+
+.experience-card:not(:hover) .missions {
+  opacity: 0;  /* Les missions restent masquées pour les cartes non survolées */
+  max-height: 0;  /* Empêche les missions d'être visibles */
+}
+
+.experience-card:not(:hover) h3, 
+.experience-card:not(:hover) p {
+  opacity: 1;  /* Le titre et la date restent visibles */
+}

@@ -1,0 +1,278 @@
+/* Section supérieure du footer */
+.top-footer {
+    background-color: #0C0C0C;
+    color: #EDF5E1;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    align-items: center;
+    border-bottom: 2px solid #5CDB95;
+  }
+  
+  .footer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .footer-item:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+    color: #F2613F; /* Changement de couleur au survol */
+  }
+  
+  .footer-text {
+    font-size: 1rem;
+    color: #fff; /* Texte de l'adresse et du numéro */
+    text-decoration: none; /* Retirer le soulignement du lien */
+  }
+  
+  .top-footer .footer-item i {
+    margin-bottom: 15px; /* Espace entre l'icône et le texte */
+    font-size: 2rem; /* Taille de l'icône */
+    color: #5CDB95;
+  }
+  
+  /* Ajouter un espace entre les icônes et le texte */
+  .footer-item i {
+    margin-bottom: 15px;
+  }
+  
+  
+  /* Section inférieure du footer */
+  .bottom-footer {
+    background-color: #1C1C1C;
+    color: #EDF5E1;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+  }
+  
+  .footer-logo .logo {
+    width: 10px;
+    height: auto;
+  }
+  
+  
+  .footer-column {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #5CDB95;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: #EDF5E1;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Section réseaux sociaux */
+  .social-media iframe {
+    border: none;
+  }
+  
+  /* Qualifications logos */
+  .qualifications-logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  /* Bas du footer pour mentions légales et droits d'auteur */
+  .footer-bottom {
+    background-color: #0C0C0C;
+    text-align: center;
+    padding: 15px 0;
+    color: #EDF5E1;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom p a {
+    color: #5CDB95;
+    text-decoration: none;
+  }
+  
+  .footer-bottom p a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #0C0C0C;
+  }
+  
+  .footer-item {
+    flex: 1;
+    text-align: center;
+    color: #EDF5E1;
+  }
+  
+  .footer-title {
+    font-size: 1.5rem;
+    color: #5CDB95;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: #EDF5E1;
+  }
+  
+  li a:hover {
+    color: #F2613F;
+  }
+  
+  .cv-button {
+    background-color: #5CDB95;
+    color: #0C0C0C;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cv-button:hover {
+    background-color: #F2613F;
+    color: #EDF5E1;
+  }
+  
+  /* Conteneur des icônes de réseaux sociaux */
+.social-icons {
+  display: flex; /* Utilisation de flexbox pour aligner horizontalement */
+  justify-content: center; /* Centrer les icônes */
+  gap: 20px; /* Espace entre les icônes */
+}
+
+/* Icônes de réseaux sociaux */
+.social-icon {
+  font-size: 2rem;
+  color: #5CDB95;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #F2613F;
+}
+
+/* Responsive Design */
+
+/* Tablettes, ajustement des marges et padding */
+@media (max-width: 1024px) {
+  .top-footer, .bottom-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-item {
+    padding: 15px;
+  }
+
+  .footer-column h3 {
+    font-size: 1.3rem;
+  }
+
+  .cv-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .social-icon {
+    font-size: 1.8rem;
+  }
+}
+
+/* Smartphones en mode paysage */
+@media (max-width: 768px) {
+  .footer-item {
+    padding: 10px;
+    list-style: none;
+  }
+
+  .footer-item i {
+    font-size: 1.6rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+
+  .footer-column h3 {
+    font-size: 1.1rem;
+  }
+
+  .cv-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .social-icon {
+    font-size: 1.6rem;
+  }
+}
+
+/* Smartphones en mode portrait et très petits écrans */
+@media (max-width: 480px) {
+  .top-footer, .bottom-footer {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .footer-item {
+    padding: 8px;
+  }
+
+  .footer-item i {
+    font-size: 1.4rem;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+  }
+
+  .footer-column h3 {
+    font-size: 1rem;
+  }
+
+  .cv-button {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+
+  .social-icon {
+    font-size: 1.4rem;
+  }
+}
+

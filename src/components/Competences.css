@@ -1,0 +1,138 @@
+/* Conteneur principal pour les compétences */
+.competences-container {
+  padding: 50px;
+  background-color: #f5f5f5;
+}
+
+/* Titre principal des compétences */
+.competences-title {
+  text-align: center;
+  font-size: 45px;
+  color: #379683;
+  margin-bottom: 40px;
+}
+
+/* Grille pour organiser les catégories en colonnes */
+.competences-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+  gap: 20px;
+}
+
+/* Card pour chaque catégorie */
+.competence-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease; /* Transition standard */
+  -webkit-transition: transform 0.3s ease; /* Transition pour Safari */
+  -moz-transition: transform 0.3s ease; /* Transition pour Firefox */
+}
+
+.competence-card:hover {
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px); /* Animation pour Safari */
+  -moz-transform: translateY(-10px); /* Animation pour Firefox */
+}
+
+
+/* Titre de chaque catégorie */
+.competence-category-title {
+  font-size: 1.5rem;
+  color: #379683 !important;
+  margin-bottom: 20px;
+}
+
+/* Liste des compétences à l'intérieur de chaque card, organisée en grille 4 par ligne */
+.competence-list-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 logos par ligne */
+  gap: 15px;
+  justify-items: center; /* Centrer les logos */
+  align-items: center; /* Centrer verticalement */
+}
+
+/* Style de chaque compétence */
+.competence-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.competence-logo {
+  width: 80px; /* Taille plus grande des logos */
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.competence-item span {
+  font-size: 1.2rem; /* Augmenter la taille du texte */
+  color: #333;
+}
+
+/* Responsive pour tablettes */
+@media (max-width: 1024px) {
+  .competences-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+    gap: 15px;
+  }
+
+  .competence-list-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 logos par ligne */
+  }
+
+  .competence-logo {
+    width: 70px; /* Taille réduite des logos */
+    height: 70px;
+  }
+
+  .competence-category-title {
+    font-size: 1.4rem; /* Ajuste la taille du titre */
+  }
+}
+
+/* Responsive pour téléphones */
+@media (max-width: 768px) {
+  .competences-grid {
+    grid-template-columns: 1fr; /* 1 colonne sur téléphone */
+    gap: 20px;
+  }
+
+  .competence-list-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 logos par ligne */
+  }
+
+  .competence-logo {
+    width: 60px; /* Taille réduite des logos */
+    height: 60px;
+  }
+
+  .competence-category-title {
+    font-size: 1.3rem; /* Réduction de la taille du titre */
+  }
+}
+
+/* Responsive pour très petits téléphones */
+@media (max-width: 480px) {
+  .competences-grid {
+    grid-template-columns: 1fr; /* 1 colonne pour petits téléphones */
+    gap: 15px;
+  }
+
+  .competence-list-grid {
+    grid-template-columns: 1fr; /* 1 logo par ligne pour très petits écrans */
+  }
+
+  .competence-logo {
+    width: 50px; /* Taille encore plus petite des logos */
+    height: 50px;
+  }
+
+  .competence-category-title {
+    font-size: 1.2rem; /* Réduction du titre */
+  }
+}
